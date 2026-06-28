@@ -1,0 +1,19 @@
+# Redrob Hackathon — Ranker Dependencies
+# =========================================
+# This ranker uses ONLY Python standard library.
+# No pip install required. Runs on Python 3.8+.
+#
+# Standard library modules used:
+#   - argparse   (CLI)
+#   - csv        (output writing)
+#   - gzip       (reading .jsonl.gz)
+#   - heapq      (min-heap top-100 tracking)
+#   - json       (parsing JSONL)
+#   - math       (log, sqrt for skill trust scoring)
+#   - re         (not used directly but available)
+#   - sys        (stderr logging)
+#   - datetime   (date arithmetic for behavioral signals)
+#   - pathlib    (file extension detection)
+#
+# If you want to run the optional test suite or sandbox:
+#   pip install streamlit   # for the sandbox UI only

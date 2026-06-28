@@ -1,0 +1,28 @@
+# Datasets (Do NOT push these to GitHub - too large!)
+candidates.jsonl
+candidates.jsonl.gz
+
+# Submissions & Outputs
+team_test.csv
+team_test2.csv
+team_test3.csv
+ArchForge.xlsx
+ArchForge.csv
+*.xlsx
+*.csv
+!sample_submission.csv
+
+# Extracted Temp Files
+README.txt
+job_description.txt
+redrob_signals_doc.txt
+submission_spec.txt
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# IDEs & System
+.idea/
+.vscode/
+.DS_Store
