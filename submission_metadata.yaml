@@ -17,16 +17,17 @@ team_members:
 # ============================================================================
 # Code and reproducibility
 # ============================================================================
-github_repo: "https://github.com/gowork-archis/redrob-candidate-ranker"
+github_repo: "https://github.com/starving-array/redrob-candidate-ranker"
 # Required. Must be reachable. Private repos OK if you can grant organizer
 # access at Stage 3 (the email to add will be communicated then).
 
-sandbox_link: "https://huggingface.co/spaces/gowork-archis/redrob-ranker"
+sandbox_link: "https://colab.research.google.com/drive/1KzE1whWNesjYtudwWG5E1Rz6zUUnk9_r?usp=sharing"
+
 # Required. A working hosted environment where the ranker can be run on a small
 # candidate sample. See Section 10.5 of submission_spec.md for acceptable
 # platforms (HuggingFace Spaces, Streamlit Cloud, Replit, Colab, Docker, Binder).
 
-reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./ArchForge.csv"
 # The single command that produces submission.csv from candidates.jsonl.
 # Should run end-to-end within 5 minutes on CPU with 16GB RAM and no network.
 
@@ -48,13 +49,11 @@ compute:
 # AI tools declaration
 # ============================================================================
 ai_tools_used:
-  - "Gemini"
-  - "Cursor"
+  - "Antigravity"
   - "Claude"
-  - "GitHub Copilot"
-
+  
 ai_usage_summary: |
-  Used Gemini for code optimization, debugging, and architectural review. No candidate data was transmitted to external APIs during ranking.
+  Used Antigravity, Claude for code optimization, debugging, and architectural review. No candidate data was transmitted to external APIs during ranking.
 
 # ============================================================================
 # Approach summary (optional but recommended)

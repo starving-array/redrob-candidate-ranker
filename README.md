@@ -41,33 +41,42 @@ cp /path/to/candidates.jsonl .
 ### Step 2 — Run the ranker
 
 ```bash
-python rank.py --candidates ./candidates.jsonl.gz --out ./team_xxx.csv
+python rank.py --candidates ./candidates.jsonl --out ./ArchForge.csv
 ```
 
-Replace `team_xxx.csv` with your actual registered team ID.
+Or with gzipped candidates:
+```bash
+python rank.py --candidates ./candidates.jsonl.gz --out ./ArchForge.csv
+```
 
 Expected output (stderr):
 
 ```
-[rank.py] Reading candidates from: ./candidates.jsonl.gz
-[rank.py]   10,000 processed, 7,200 filtered out, 100 in top-100 heap...
-[rank.py]   20,000 processed, 14,400 filtered out, 100 in top-100 heap...
+[rank.py] Reading candidates from: ./candidates.jsonl
+[rank.py]   10,000 processed, 9,800 filtered out, 100 in top-100 heap...
 ...
-[rank.py] Done. 100,000 total, 72,000 filtered, 100 in final pool.
-[rank.py] Submission written to: ./team_xxx.csv
-[rank.py] Top 5 candidates:
-  #1  CAND_XXXXXXX  score=0.XXXX  ...
+[rank.py] Done. 100,000 total, 98,161 filtered, 100 in final pool.
+[rank.py] Submission written to: ./ArchForge.csv
 ```
 
-### Step 3 — Validate before submitting
+### Step 3 — Convert to Excel format (required by submission portal)
 
 ```bash
-python validate_submission.py team_xxx.csv
+python -c "import pandas as pd; pd.read_csv('ArchForge.csv').to_excel('ArchForge.xlsx', index=False)"
+```
+
+This creates `ArchForge.xlsx` ready for upload.
+
+### Step 4 — Validate before submitting
+
+```bash
+python validate_submission.py ArchForge.csv
 ```
 
 Expected: `Submission is valid.`
 
-### Step 4 — Test on sample data (optional, recommended)
+
+### Step 5 — Test on sample data (optional, recommended)
 
 ```bash
 python test_ranker.py --sample ./sample_candidates.json
@@ -151,5 +160,5 @@ See `submission_metadata.yaml` for exact environment details.
 Single reproduce command:
 
 ```bash
-python rank.py --candidates ./candidates.jsonl.gz --out ./team_xxx.csv
+python rank.py --candidates ./candidates.jsonl --out ./ArchForge.csv
 ```

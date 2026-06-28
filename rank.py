@@ -775,8 +775,9 @@ def main():
     parser = argparse.ArgumentParser(description="Redrob candidate ranker")
     parser.add_argument("--candidates", required=True,
                         help="Path to candidates.jsonl or candidates.jsonl.gz")
-    parser.add_argument("--out", required=True,
-                        help="Output CSV path (e.g. team_xxx.csv)")
+    parser.add_argument("--out", default="./ArchForge.csv",
+                        help="Output CSV path (defaults to ./ArchForge.csv)")
+
     args = parser.parse_args()
 
     rank_candidates(args.candidates, args.out)
